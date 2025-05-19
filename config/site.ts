@@ -10,13 +10,12 @@ export const siteConfig = {
     },
     {
       label: "Compare",
-      href: "/",
+      href: "/compare",
     },
     {
       label: "Enhancement Simulator",
       href: "/enhancement-sim",
     },
-
   ],
   navMenuItems: [
     {

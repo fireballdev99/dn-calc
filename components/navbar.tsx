@@ -23,6 +23,7 @@ import {
   SearchIcon,
   Logo,
 } from "@/components/icons";
+import SupportModal from "./SupportModal";
 
 export const Navbar = () => {
   const searchInput = (
@@ -62,7 +63,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -84,7 +85,7 @@ export const Navbar = () => {
             as={Link}
             className="text-sm font-normal text-default-600 bg-default-100"
             href={siteConfig.links.report}
-            startContent={<HeartFilledIcon className="text-danger" />}
+            startContent={<p className="text-danger">R</p>}
             variant="flat"
           >
             Request / Report
@@ -94,25 +95,14 @@ export const Navbar = () => {
             as={Link}
             className="text-sm font-normal text-default-600 bg-default-100"
             href={siteConfig.links.issues}
-            startContent={<HeartFilledIcon className="text-danger" />}
+            startContent={<p className="text-danger">I</p>}
             variant="flat"
           >
             Issues
           </Button>
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat"
-          >
-            Support
-          </Button>
-
+          <SupportModal />
         </NavbarItem>
       </NavbarContent>
-
 
       <NavbarMenu>
         {searchInput}
